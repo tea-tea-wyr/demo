@@ -16,6 +16,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.List;
 
+import pl.com.salsoft.sqlitestudioremote.SQLiteStudioService;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView textNum;
@@ -37,6 +39,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         showListView();
         //显示listView的条目数量
         linkmanNum();
+        //打开SQLiteStudio
+        SQLiteStudioService.instance().start(this);
+        SQLiteStudioService.instance().stop();
     }
     /**
      * 初始化控件
